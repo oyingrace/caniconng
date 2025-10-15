@@ -1,0 +1,80 @@
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+
+export default function ContactSection() {
+  const contactInfo = [
+    {
+      icon: Phone,
+      title: "Phone Number",
+      details: ["+234 811 222 3333"],
+      subtext: "Mon-Fri, 8am-6pm EST"
+    },
+    {
+      icon: Mail,
+      title: "Email Address",
+      details: ["michaelkingsley@cannicon.com", "cnijomanta@cannicon.com"],
+      subtext: "We'll respond within 24 hours"
+    },
+    {
+      icon: MapPin,
+      title: "Our Location",
+      details: ["123 Anywhere Street", "Abia, Nigeria"],
+      subtext: "Visit us during business hours"
+    }
+  ];
+
+  return (
+    <section className="bg-white py-16 md:py-20 lg:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-12 md:mb-16">
+          <p className="text-blue-600 font-semibold text-sm md:text-base tracking-wide uppercase mb-3">
+            GET IN TOUCH
+          </p>
+          <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
+            Have a question or ready to start your project? Reach out to us through any of the channels below
+          </p>
+        </div>
+
+        {/* Contact Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-16">
+          {contactInfo.map((contact, index) => {
+            const Icon = contact.icon;
+            return (
+              <div
+                key={index}
+                className="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  {contact.title}
+                </h3>
+                <div className="space-y-2 mb-4">
+                  {contact.details.map((detail, idx) => (
+                    <p key={idx} className="text-gray-700 text-lg font-medium">
+                      {detail}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+
+        {/* Map Placeholder */}
+      {/*   <div className="rounded-3xl overflow-hidden">
+          <div className="bg-blue-500 h-96 w-full flex items-center justify-center">
+            <div className="text-center text-white">
+              <MapPin className="w-16 h-16 mx-auto mb-4 opacity-50" />
+              <p className="text-xl font-semibold">Map will be displayed here</p>
+              <p className="text-blue-100 mt-2">123 Anywhere Street, New York, NY 10001</p>
+            </div>
+          </div>
+        </div> */}
+
+      </div>
+    </section>
+  );
+}
