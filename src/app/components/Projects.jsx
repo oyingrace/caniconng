@@ -1,6 +1,12 @@
+'use client';
 
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 export default function Projects() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   const projects = [
     {
       title: "Downtown Office Complex",
@@ -40,11 +46,65 @@ export default function Projects() {
     }
   ];
 
+  const headerVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }
+    }
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }
+    }
+  };
+
+  const ctaVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: 0.5,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }
+    }
+  };
+
   return (
-    <section className="bg-white py-16 md:py-20 lg:py-24">
+    <section ref={ref} className="bg-white py-16 md:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16">
+        <motion.div 
+          className="text-center mb-12 md:mb-16"
+          variants={headerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
           <p className="text-blue-600 font-semibold text-sm md:text-base tracking-wide uppercase mb-3">
             OUR WORK
           </p>
@@ -54,13 +114,19 @@ export default function Projects() {
           <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
             Explore our portfolio of successful electrical engineering projects across various industries
           </p>
-        </div>
+        </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
           {projects.map((project, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={cardVariants}
               className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
             >
               {/* Image Placeholder */}
@@ -79,19 +145,24 @@ export default function Projects() {
                 </p>
 
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-12 md:mt-16">
+        <motion.div 
+          className="text-center mt-12 md:mt-16"
+          variants={ctaVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
           <p className="text-gray-600 mb-6">
             Ready to start your project?
           </p>
           <button className="bg-lime-400 hover:bg-lime-500 text-gray-900 font-semibold px-8 py-3.5 rounded-full transition-colors shadow-lg hover:shadow-xl">
             Contact Us
           </button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
