@@ -73,7 +73,7 @@ export default function Navbar() {
   
     return (
       <motion.nav 
-        className="bg-blue-600 shadow-lg"
+        className="bg-blue-600 shadow-lg overflow-x-hidden"
         variants={navVariants}
         initial="hidden"
         animate="visible"

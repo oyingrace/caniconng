@@ -75,7 +75,7 @@ export default function ServicesSection() {
   };
 
   return (
-    <section ref={ref} className="bg-gray-50 py-16 md:py-20 lg:py-24">
+    <section ref={ref} className="bg-gray-50 py-16 md:py-20 lg:py-24 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div 

@@ -39,7 +39,7 @@ export default function HeroSection() {
     };
 
     return (
-      <section className="bg-white py-12 md:py-16 lg:py-20">
+      <section className="bg-white py-12 md:py-16 lg:py-20 overflow-x-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
