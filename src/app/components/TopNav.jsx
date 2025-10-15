@@ -1,6 +1,27 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
 export default function TopNav() {
+  const topNavVariants = {
+    hidden: { y: -50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }
+    }
+  };
+
   return (
-    <div className="bg-gray-100 border-b border-gray-200">
+    <motion.div 
+      className="bg-gray-100 border-b border-gray-200"
+      variants={topNavVariants}
+      initial="hidden"
+      animate="visible"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-10 text-sm">
           {/* Contact Info */}
@@ -15,6 +36,6 @@ export default function TopNav() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
