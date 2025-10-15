@@ -5,6 +5,7 @@ import ServicesSection from "./components/Services";
 import Projects from "./components/Projects";
 import AboutSection from "./components/AboutUs";
 import ContactSection from "./components/Contact";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
     <Projects />
     <AboutSection />
     <ContactSection />
+    <Footer />
    </div>
   );
 }
