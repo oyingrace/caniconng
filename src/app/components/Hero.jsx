@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function HeroSection() {
     const containerVariants = {
@@ -75,22 +76,44 @@ export default function HeroSection() {
   
               {/* Image placeholder for left side */}
               <motion.div 
-                className="mt-0 lg:mt-8 bg-blue-500 rounded-3xl h-64 sm:h-80 md:h-96 w-full"
+                className="mt-0 lg:mt-8 rounded-3xl h-64 sm:h-80 md:h-96 w-full overflow-hidden"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-              ></motion.div>
+              >
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/img1.webp"
+                    alt="Electrical engineers working on power lines"
+                    fill
+                    priority
+                    sizes="(min-width: 1024px) 600px, (min-width: 640px) 100vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+              </motion.div>
             </div>
   
             {/* Right Content */}
             <div className="order-1 lg:order-2 relative">
               {/* Image placeholder for right side */}
               <motion.div 
-                className="bg-blue-600 rounded-3xl h-96 sm:h-[28rem] md:h-[32rem] lg:h-[36rem] w-full"
+                className="rounded-3xl h-96 sm:h-[28rem] md:h-[32rem] lg:h-[36rem] w-full overflow-hidden"
                 variants={scaleIn}
                 initial="hidden"
                 animate="visible"
-              ></motion.div>
+              >
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/img2.webp"
+                    alt="Electrical control panel with circuit breakers and wiring"
+                    fill
+                    priority
+                    sizes="(min-width: 1024px) 800px, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+              </motion.div>
               
               {/* Text overlay - visible only on mobile/tablet */}
               <motion.div 
