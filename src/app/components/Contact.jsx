@@ -12,7 +12,7 @@ export default function ContactSection() {
     {
       icon: Phone,
       title: "Phone Number",
-      details: ["+234 811 222 3333"],
+      details: ["+2348034099746"],
       subtext: "Mon-Fri, 8am-6pm EST"
     },
     {
@@ -24,7 +24,7 @@ export default function ContactSection() {
     {
       icon: MapPin,
       title: "Our Location",
-      details: ["123 Anywhere Street", "Abia, Nigeria"],
+      details: ["Plot 1 Okwuta Isieke Road, Okuwuta, Umuahia Ibeku, Abia State, Nigeria"],
       subtext: "Visit us during business hours"
     }
   ];

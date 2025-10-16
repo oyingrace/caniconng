@@ -31,7 +31,7 @@ export default function TopNav() {
               cnijomanta@caniconng.com
             </a>
             <a href="tel:+13330000000" className="hidden sm:inline text-gray-700 hover:text-blue-600 transition-colors">
-              +234 811 222 3333
+            +2348034099746
             </a>
           </div>
         </div>
