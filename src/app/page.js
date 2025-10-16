@@ -1,6 +1,7 @@
 import TopNav from "./components/TopNav";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/Hero";
+import Clients from "./components/Clients";
 import ServicesSection from "./components/Services";
 import Projects from "./components/Projects";
 import AboutSection from "./components/AboutUs";
@@ -13,6 +14,7 @@ export default function Home() {
     <TopNav />
     <Navbar />
     <HeroSection />
+    <Clients />
     <ServicesSection />
     <Projects />
     <AboutSection />

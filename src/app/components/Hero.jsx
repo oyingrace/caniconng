@@ -57,7 +57,7 @@ export default function HeroSection() {
                   className="text-sm md:text-base"
                 >
                   <span className="inline-block bg-blue-600 text-white font-semibold px-3 py-1.5 rounded-full uppercase tracking-wide shadow-md text-xs md:text-sm">
-                    HIGH QUALITY ELECTRICAL SERVICES
+                    YOUR RELIABLE PARTNER
                   </span>
                 </motion.p>
                 
@@ -133,7 +133,7 @@ export default function HeroSection() {
                     className="text-sm sm:text-base"
                   >
                     <span className="inline-block bg-blue-600 text-white font-semibold px-3 py-1.5 rounded-full uppercase tracking-wide shadow-md text-xs sm:text-sm">
-                      HIGH QUALITY ELECTRICAL SERVICES
+                      YOUR RELIABLE PARTNER
                     </span>
                   </motion.p>
                   

@@ -20,7 +20,7 @@ export default function Footer() {
     };
 
     return (
-      <footer ref={ref} className="bg-gray-900 py-6">
+      <footer ref={ref} className="bg-blue-600 py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center"
@@ -28,7 +28,7 @@ export default function Footer() {
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           >
-            <p className="text-gray-400 text-sm">
+            <p className="text-white text-sm">
               © 2025 Cannicon. All rights reserved.
             </p>
           </motion.div>
