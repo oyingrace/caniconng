@@ -54,9 +54,11 @@ export default function HeroSection() {
               >
                 <motion.p 
                   variants={fadeInUp}
-                  className="text-blue-700 font-semibold text-sm md:text-base tracking-wide uppercase"
+                  className="text-sm md:text-base"
                 >
-                  HIGH QUALITY ELECTRICAL SERVICEs
+                  <span className="inline-block bg-blue-600 text-white font-semibold px-3 py-1.5 rounded-full uppercase tracking-wide shadow-md text-xs md:text-sm">
+                    HIGH QUALITY ELECTRICAL SERVICES
+                  </span>
                 </motion.p>
                 
                 <motion.h1 
@@ -115,6 +117,9 @@ export default function HeroSection() {
                 </div>
               </motion.div>
               
+              {/* Mobile-only dark overlay for text readability */}
+              <div className="lg:hidden absolute inset-0 rounded-3xl bg-gradient-to-t from-black/85 via-black/70 to-black/50" />
+              
               {/* Text overlay - visible only on mobile/tablet */}
               <motion.div 
                 className="lg:hidden absolute inset-0 flex flex-col justify-center p-6 sm:p-8"
@@ -125,9 +130,11 @@ export default function HeroSection() {
                 <div className="space-y-4 sm:space-y-6">
                   <motion.p 
                     variants={fadeInUp}
-                    className="text-white font-semibold text-xs sm:text-sm tracking-wide uppercase"
+                    className="text-sm sm:text-base"
                   >
-                    HIGH QUALITY ELECTRICAL SERVICES
+                    <span className="inline-block bg-blue-600 text-white font-semibold px-3 py-1.5 rounded-full uppercase tracking-wide shadow-md text-xs sm:text-sm">
+                      HIGH QUALITY ELECTRICAL SERVICES
+                    </span>
                   </motion.p>
                   
                   <motion.h1 
