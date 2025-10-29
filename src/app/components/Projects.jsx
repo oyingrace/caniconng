@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Projects() {
   const ref = useRef(null);
@@ -9,41 +10,13 @@ export default function Projects() {
 
   const projects = [
     {
-      title: "Downtown Office Complex",
-      location: "New York, NY",
-      date: "2024",
-      description: "Complete electrical system installation for 15-story office building including backup generators and smart building integration."
-    },
+      title: "ElectroStatic Net Installation (Cradle guard) at Eterna Filling Station",
+      image: "/project1.jpg"
+      },
     {
-      title: "Manufacturing Facility Upgrade",
-      location: "Detroit, MI",
-      date: "2024",
-      description: "Industrial power distribution system overhaul with automated controls and energy monitoring systems."
-    },
-    {
-      title: "Luxury Residential Tower",
-      location: "Miami, FL",
-      date: "2023",
-      description: "High-end residential electrical installations with home automation, EV charging stations, and smart lighting."
-    },
-    {
-      title: "Shopping Mall Renovation",
-      location: "Los Angeles, CA",
-      date: "2023",
-      description: "Energy-efficient LED lighting system and electrical infrastructure upgrade for 200,000 sq ft retail space."
-    },
-    {
-      title: "Water Treatment Plant",
-      location: "Phoenix, AZ",
-      date: "2024",
-      description: "Critical infrastructure electrical systems including redundant power supplies and monitoring equipment."
-    },
-    {
-      title: "Warehouse Automation",
-      location: "Chicago, IL",
-      date: "2023",
-      description: "Complete electrical design for automated warehouse with robotics integration and power management systems."
-    }
+      title: "Construction of 33KV Transformer Sub-Station at Rapid FM Radio 96.5 Umuahia",
+      image: "/project2.jpg"
+      },
   ];
 
   const headerVariants = {
@@ -129,9 +102,16 @@ export default function Projects() {
               variants={cardVariants}
               className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
             >
-              {/* Image Placeholder */}
-              <div className="relative bg-blue-500 h-64 w-full overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-600"></div>
+              {/* Project Image */}
+              <div className="relative h-64 w-full overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  priority={index === 0}
+                />
               </div>
 
               {/* Content */}
@@ -140,9 +120,6 @@ export default function Projects() {
                   {project.title}
                 </h3>
                 
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                  {project.description}
-                </p>
 
               </div>
             </motion.div>

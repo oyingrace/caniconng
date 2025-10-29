@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState } from 'react';
 import { motion, useInView, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Award, Users, Zap, Shield } from 'lucide-react';
+import Image from 'next/image';
 
 function AnimatedCounter({ value, suffix = "" }) {
   const ref = useRef(null);
@@ -101,7 +102,16 @@ export default function AboutSection() {
               initial="hidden"
               animate={isContentInView ? "visible" : "hidden"}
             >
-              <div className="bg-blue-500 rounded-3xl h-96 md:h-[32rem] w-full"></div>
+              <div className="relative rounded-3xl h-96 md:h-[32rem] w-full overflow-hidden">
+                <Image
+                  src="/img3.webp"
+                  alt="About Canicon electrical engineering"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
             </motion.div>
 
             {/* Right - Content */}

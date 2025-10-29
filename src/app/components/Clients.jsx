@@ -3,9 +3,7 @@ import Image from 'next/image';
 export default function Clients() {
     const clients = [
       { src: '/client1.png', alt: 'Client 1' },
-      { src: '/client2.png', alt: 'Client 2' },
-      { src: '/client1.png', alt: 'Client 3' },
-      { src: '/client1.png', alt: 'Client 4' }
+      { src: '/client2.png', alt: 'Client 2' }
     ];
 
     return (
