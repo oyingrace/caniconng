@@ -18,7 +18,7 @@ export default function ContactSection() {
     {
       icon: Mail,
       title: "Email Address",
-      details: ["michaelkingsley@cannicon.com", "cnijomanta@cannicon.com"],
+      details: ["kintusijomanta@caniconng.com", "cnijomanta@caniconng.com"],
       subtext: "We'll respond within 24 hours"
     },
     {

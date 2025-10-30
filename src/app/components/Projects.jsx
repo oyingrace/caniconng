@@ -11,7 +11,8 @@ export default function Projects() {
   const projects = [
     {
       title: "ElectroStatic Net Installation (Cradle guard) at Eterna Filling Station",
-      image: "/project1.jpg"
+      image: "/project1.jpg",
+      video: "/eterna.mp4"
       },
     {
       title: "Construction of 33KV Transformer Sub-Station at Rapid FM Radio 96.5 Umuahia",
@@ -102,16 +103,27 @@ export default function Projects() {
               variants={cardVariants}
               className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
             >
-              {/* Project Image */}
+              {/* Project Media */}
               <div className="relative h-64 w-full overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  priority={index === 0}
-                />
+                {project.video ? (
+                  <video
+                    src={project.video}
+                    className="object-cover w-full h-full absolute inset-0"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                ) : (
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    priority={index === 0}
+                  />
+                )}
               </div>
 
               {/* Content */}
