@@ -66,7 +66,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section ref={ref} className="bg-white py-16 md:py-20 lg:py-24 overflow-x-hidden">
+    <section id="contact" ref={ref} className="bg-white py-16 md:py-20 lg:py-24 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div 
@@ -105,11 +105,39 @@ export default function ContactSection() {
                   {contact.title}
                 </h3>
                 <div className="space-y-2 mb-4">
-                  {contact.details.map((detail, idx) => (
-                    <p key={idx} className="text-gray-700 text-lg font-medium">
-                      {detail}
-                    </p>
-                  ))}
+                  {contact.details.map((detail, idx) => {
+                    if (contact.title.toLowerCase().includes('phone')) {
+                      return (
+                        <div key={idx}>
+                          <a
+                            href={`tel:${detail.replace(/\D/g, '')}`}
+                            className="text-blue-600 hover:underline text-lg font-medium block"
+                          >
+                            {detail}
+                          </a>
+                        </div>
+                      );
+                    } else if (contact.title.toLowerCase().includes('email')) {
+                      return (
+                        <div key={idx}>
+                          <a
+                            href={`mailto:${detail}`}
+                            className="text-blue-600 hover:underline text-lg font-medium block"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {detail}
+                          </a>
+                        </div>
+                      );
+                    } else {
+                      return (
+                        <div key={idx} className="text-gray-700 text-lg font-medium">
+                          {detail}
+                        </div>
+                      );
+                    }
+                  })}
                 </div>
               </motion.div>
             );

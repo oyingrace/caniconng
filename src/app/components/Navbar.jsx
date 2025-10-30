@@ -108,6 +108,7 @@ export default function Navbar() {
               ))}
               <motion.button 
                 className="bg-lime-400 hover:bg-lime-500 text-gray-800 font-semibold px-6 py-2.5 rounded-full transition-colors"
+                href="#contact"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ 
@@ -156,6 +157,7 @@ export default function Navbar() {
                   <motion.button 
                     className="bg-lime-400 hover:bg-lime-500 text-gray-800 font-semibold px-6 py-2.5 rounded-full transition-colors mt-2"
                     variants={mobileItemVariants}
+                    href="#contact"
                   >
                     Contact Us
                   </motion.button>
